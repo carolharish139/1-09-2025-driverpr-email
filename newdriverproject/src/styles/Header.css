@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lightblue;
+  color: #333;
+}
+
+/* עיצוב עדין ואלגנטי ל-Header */
+.header {
+  background-color: lightcyan;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px 0;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.header:hover {
+  border-color: #999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: black;
+  letter-spacing: 1px;
+  margin-left: 370px;
+}

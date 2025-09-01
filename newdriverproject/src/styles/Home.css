@@ -1,0 +1,152 @@
+/* ===== Home page only ===== */
+.home-page{
+  --hp-ink:#0f172a;
+  --hp-green:#22c55e;
+  --hp-green-600:#16a34a;
+  --hp-red:#ef4444;
+  --hp-border:#e5e7eb;
+  --hp-card:#ffffff;
+  --hp-bg:#f7fafc;
+  --hp-shadow:0 10px 24px rgba(15,23,42,.08);
+
+  direction: rtl;
+  text-align: right;
+  background: var(--hp-bg);
+  min-height: 100vh;
+  padding: 16px 12px;
+}
+
+.home-page .home-content{
+  max-width: 980px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+/* כותרת שלום */
+.home-page .home-title{
+  margin: 8px 0 18px;
+  color: #0d47a1;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+/* כרטיסים */
+.home-page .home-card{
+  background: var(--hp-card);
+  border: 1px solid var(--hp-border);
+  border-radius: 16px;
+  box-shadow: var(--hp-shadow);
+  padding: 20px 22px;
+  margin-bottom: 18px;
+}
+
+.home-page .home-card h3{
+  margin: 0 0 8px;
+  font-weight: 800;
+  color: var(--hp-ink);
+}
+
+/* אזור בחירת תאריך */
+.home-page .home-date-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0 10px;
+}
+.home-page .home-date-input{
+  padding: 10px 14px;
+  border: 1px solid var(--hp-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  outline: none;
+  direction: ltr;
+  text-align: center;
+}
+.home-page .home-date-input:focus{
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(59,130,246,.15);
+}
+
+/* שעות */
+.home-page .home-hours-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 6px 2px 2px;
+}
+.home-page .home-hour-btn{
+  min-width: 76px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  border: 1px solid #0b3a1180;
+  background: #e9fbe9;
+  color: #0b3a11;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.home-page .home-hour-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+.home-page .home-hour-btn.selected{
+  background: #c7f9cc;
+  border-color: #17803c;
+}
+
+/* כפתורים */
+.home-page .home-primary-btn{
+  background: var(--hp-green);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(34,197,94,.25);
+  transition: filter .15s ease, transform .15s ease;
+}
+.home-page .home-primary-btn:hover{ filter: brightness(1.05); transform: translateY(-1px); }
+
+/* הודעות סטטוס */
+.home-page .home-status{
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--hp-ink);
+}
+
+/* טבלת "השיעורים שלי" */
+.home-page .home-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.home-page .home-table thead th{
+  background: var(--hp-green);
+  color: #fff;
+  padding: 12px;
+  text-align: right;
+  font-weight: 800;
+}
+.home-page .home-table tbody td{
+  padding: 12px;
+  border-top: 1px solid var(--hp-border);
+  text-align: right;
+}
+.home-page .home-table tbody tr:nth-child(even){
+  background: #fafafa;
+}
+.home-page .home-cancel-btn{
+  background: var(--hp-red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(239,68,68,.2);
+  transition: filter .15s ease, transform .15s ease;
+}
+.home-page .home-cancel-btn:hover{ filter: brightness(1.05); transform: translateY(-1px); }

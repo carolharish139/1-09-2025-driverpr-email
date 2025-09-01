@@ -1,0 +1,47 @@
+/*    כל המרובע שהכפתורים נמצאים בתוכו */
+.login-container {
+  width: 350px;
+  margin-left: 420px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  direction: rtl;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/*    התחברות*/
+.login-container h2 {
+  text-align: center;
+  color:black;
+}
+/*   אחורי הכפתורים*/
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/*    תעודת זהות וסיסמה*/
+.login-container input {
+  padding: 10px;
+  font-size: 16px;
+  background-color:white;
+}
+
+.login-container button {
+ width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.login-container button:hover {
+  background-color: #45a049;
+}

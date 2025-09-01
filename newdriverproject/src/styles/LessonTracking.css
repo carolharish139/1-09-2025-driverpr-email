@@ -1,0 +1,22 @@
+.lesson-tracking-container {
+  width: 250px;
+  min-width: 100px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-block: 200px;
+  margin-right: 150px;
+}
+
+.lesson-card{
+  font-size: 15px;
+  font-weight: bold;
+  color: #007acc;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 10px;
+}
+
+

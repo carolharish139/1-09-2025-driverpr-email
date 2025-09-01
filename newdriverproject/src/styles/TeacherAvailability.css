@@ -1,0 +1,254 @@
+/* ===== עיצוב מוגבל לעמוד הזה בלבד ===== */
+.teacher-availability-page{
+  --ta-sidemenu-w: 260px;             /* שנה לפי רוחב התפריט שלך */
+  --ta-green: #22c55e;
+  --ta-green-600: #16a34a;
+  --ta-red: #ef4444;
+  --ta-red-600: #dc2626;
+  --ta-border: #e5e7eb;
+  --ta-ink: #0f172a;
+  --ta-bg: #f8fafc;
+  --ta-card: #ffffff;
+  --ta-shadow: 0 8px 24px rgba(15, 23, 42, .08);
+
+  /* Grid: תוכן בעמודה 1, תפריט בעמודה 2 */
+  display: grid;
+  grid-template-columns: 1fr var(--ta-sidemenu-w);
+  gap: 16px;
+  align-items: start;
+
+  direction: rtl;
+  text-align: right;
+  background: var(--ta-bg);
+  padding: 16px;
+}
+
+/* התוכן */
+.teacher-availability-page .availability-content{
+  background: var(--ta-card);
+  border-radius: 16px;
+  box-shadow: var(--ta-shadow);
+  padding: 24px;
+  margin-right: 250px;
+  color: var(--ta-ink);
+  min-width: 0; /* prevent overflow */
+}
+
+/* התפריט — לא מכסה, יושב בעמודה ייעודית; sticky כדי שישאר נראה בגלילה */
+.teacher-availability-page .ta-sidemenu{
+  position: sticky;
+  top: 12px;
+  align-self: start;
+}
+
+/* רספונסיביות: במסכים צרים — עמודה אחת */
+@media (max-width: 900px){
+  .teacher-availability-page{
+    grid-template-columns: 1fr;
+  }
+  .teacher-availability-page .ta-sidemenu{
+    position: static;
+  }
+}
+
+/* כותרות והודעות */
+.teacher-availability-page h2{
+  margin: 0 0 18px;
+  color: #0d47a1;
+  font-size: 28px;
+}
+.teacher-availability-page h3{
+  margin: 22px 0 10px;
+  font-weight: 800;
+}
+.teacher-availability-page .message-success{
+  color: var(--ta-green-600);
+  font-weight: 700;
+}
+.teacher-availability-page .ta-error{
+  color: var(--ta-red-600);
+  font-weight: 700;
+}
+
+/* שורת בחירת תאריך */
+.teacher-availability-page .date-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+.teacher-availability-page .date-row input[type="date"]{
+  padding: 10px 14px;
+  border: 1px solid var(--ta-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  outline: none;
+  direction: ltr;      /* תאריכים—מספרים LTR */
+  text-align: center;
+}
+.teacher-availability-page .date-row input[type="date"]:focus{
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 4px rgba(59,130,246,.15);
+}
+
+/* פעולות יום */
+.teacher-availability-page .day-actions{
+  display: flex;
+  gap: 10px;
+  margin: 8px 0 16px;
+}
+.teacher-availability-page .day-actions button{
+  border: 1px solid var(--ta-border);
+  background: #fff;
+  color: var(--ta-ink);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: var(--ta-shadow);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.teacher-availability-page .day-actions button:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+/* גריד השעות */
+.teacher-availability-page .hours-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 4px;
+  margin-top: 10px;
+}
+
+/* כפתורי שעה – pill */
+.teacher-availability-page .hour-pill{
+  min-width: 72px;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  border: 1px solid #0b3a1180;
+  background: #e9fbe9;
+  color: #0b3a11;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,.10);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease, background .15s ease;
+}
+.teacher-availability-page .hour-pill:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12);
+}
+
+/* מצבים */
+.teacher-availability-page .hour-pill.available{
+  background: #e7fbe9;
+  color: #0b3a11;
+}
+.teacher-availability-page .hour-pill.unavailable{
+  background: #fde2e2;
+  color: #7a0c0c;
+  border-color: #7a0c0c80;
+}
+.teacher-availability-page .hour-pill.booked,
+.teacher-availability-page .hour-pill:disabled{
+  background: #eceff3;
+  color: #475569;
+  border-color: #0000001a;
+  cursor: not-allowed;
+  opacity: .7;
+}
+
+/* טבלאות השיעורים */
+.teacher-availability-page .lessons-section{
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--ta-shadow);
+  overflow: hidden;
+}
+.teacher-availability-page .lesson-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.teacher-availability-page .lesson-table thead th{
+  background: var(--ta-green);
+  color: #fff;
+  font-weight: 800;
+  padding: 12px;
+  text-align: right;     /* כותרות מימין */
+}
+.teacher-availability-page .lesson-table tbody td{
+  padding: 12px;
+  border-top: 1px solid var(--ta-border);
+  text-align: right;     /* טקסטים בעברית מימין */
+}
+/* שעות וזמנים — LTR כדי להציג נכון */
+.teacher-availability-page .lesson-table .time-cell{
+  direction: ltr;
+  text-align: left;
+}
+.teacher-availability-page .lesson-table tbody tr:nth-child(even){
+  background: #fafafa;
+}
+.teacher-availability-page .lesson-table button{
+  background: var(--ta-red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: filter .15s ease, transform .15s ease;
+  box-shadow: 0 8px 16px rgba(239,68,68,.2);
+}
+.teacher-availability-page .lesson-table button:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+
+/* === תיבת מונה משובים בדף אילוצים === */
+.feedback-counter-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 6px 0 14px 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.feedback-counter-card .counter-number {
+  min-width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.feedback-counter-card .counter-note {
+  color: #475569;
+  font-size: 14px;
+}
+
+.feedback-counter-card .counter-refresh {
+  border: none;
+  background: #e2e8f0;
+  color: #111827;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.feedback-counter-card .counter-refresh:disabled {
+  opacity: .6;
+  cursor: default;
+}

@@ -1,0 +1,124 @@
+.teacher-feedback-page {
+  display: flex;
+  direction: rtl;
+  background-color: #f9fbfd;
+  min-height: 100vh;
+}
+
+.teacher-feedback-container {
+  flex: 1;
+  padding: 40px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.feedback-card {
+  background: #e8faff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  background: #def6ff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.name {
+  font-weight: bold;
+  color: #1e6fa8;
+}
+
+.date {
+  font-style: italic;
+}
+
+.message {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin: 20px 0;
+}
+
+.mark-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.mark-button:hover {
+  background-color: #e04343;
+}
+
+.no-feedback {
+  color: #888;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.teacher-feedback-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  direction: rtl;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.feedback-card {
+  background: #e6fcff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.feedback-message {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.mark-button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.mark-button:hover {
+  background-color: #e74c3c;
+}
